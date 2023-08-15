@@ -1,7 +1,9 @@
 <script>
 	import { onMount } from 'svelte';
 	import TodoList from './todoList.svelte';
+	import { API_URL, fetchApi } from '$lib/actions/common';
 
+	
 	let rate = 0;
 	let task = '';
 	/**
@@ -25,6 +27,15 @@
 		// Add your task handling logic here
 		console.log('Task:', task);
 		console.log('Rate:', rate);
+    fetchApi("POST",`${API_URL}/todos`,{
+      title:task,
+      userId:1,
+      completed:false,
+      rate
+    }).then((data)=>{
+      console.log(data);
+      //window.location.reload()
+    })
 	}
 </script>
 
@@ -51,6 +62,7 @@
 			<button class="rate-item" on:click={() => addRate(15)}>15</button>
 			<button class="rate-item" on:click={() => addRate(20)}>20</button>
 		</div>
+
 	</header>
   <section>
     <TodoList/>
