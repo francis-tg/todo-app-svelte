@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import TodoList from './todoList.svelte';
 
 	let rate = 0;
 	let task = '';
@@ -51,6 +52,9 @@
 			<button class="rate-item" on:click={() => addRate(20)}>20</button>
 		</div>
 	</header>
+  <section>
+    <TodoList/>
+  </section>
 </div>
 
 <style lang="scss">
