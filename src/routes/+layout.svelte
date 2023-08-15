@@ -3,13 +3,12 @@
 </script>
 
 <div class="app">
-
 	<main>
 		<slot />
 	</main>
 
 	<footer>
-		<p><a href="#">Ciscodev</a></p>
+		<p><a href="#/">Ciscodev</a></p>
 	</footer>
 </div>
 

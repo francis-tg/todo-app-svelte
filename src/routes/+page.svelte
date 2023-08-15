@@ -1,7 +1,5 @@
 <script>
-	import TodoApp from "../components/todoApp.svelte";
-
-	
+	import TodoApp from '../components/todoApp.svelte';
 </script>
 
 <svelte:head>
@@ -10,7 +8,5 @@
 </svelte:head>
 
 <section>
-	<TodoApp/>
+	<TodoApp />
 </section>
-
-
