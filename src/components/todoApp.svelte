@@ -1,7 +1,10 @@
 <script>
+// @ts-nocheck
+
 	import { onMount } from 'svelte';
 	import TodoList from './todoList.svelte';
 	import { API_URL, fetchApi } from '$lib/actions/common';
+	import { Todos } from '../store/todo';
 
 	
 	let rate = 0;
@@ -24,16 +27,24 @@
 	});
 
 	function addTask() {
-		// Add your task handling logic here
-		console.log('Task:', task);
-		console.log('Rate:', rate);
     fetchApi("POST",`${API_URL}/todos`,{
       title:task,
       userId:1,
       completed:false,
       rate
     }).then((data)=>{
-      console.log(data);
+		
+      /* Todos.update((prevData)=>(
+		{
+			
+			...prevData,
+			[data.id-1]:data
+			
+		}
+	  ))
+	  Todos.subscribe((value)=>{
+		console.log(value)
+	  }) */
       //window.location.reload()
     })
 	}

@@ -1,4 +1,4 @@
-export const API_URL = 'https://jsonplaceholder.typicode.com';
+export const API_URL = "http://localhost:3000"//`${window.location.protocol}//${window.location.hostname}:3000`;
 type params = {
     method: string,
     url: string,
