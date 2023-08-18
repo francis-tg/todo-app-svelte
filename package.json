@@ -10,7 +10,8 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"db-server":"json-server --watch db.json"
+		"db-server":"json-server --watch db.json",
+		"host":"concurrently \"npm run preview\" \"json-server --watch db.json\""
 	},
 	"devDependencies": {
 		"@fontsource/fira-mono": "^4.5.10",
