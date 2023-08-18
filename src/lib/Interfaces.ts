@@ -1,5 +1,5 @@
 export default interface TodoInterface {
-    id: number;
+    _id: number;
     userId: number;
     title: string;
     completed: boolean;

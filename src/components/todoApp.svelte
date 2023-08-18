@@ -29,7 +29,6 @@
 	function addTask() {
     fetchApi("POST",`${API_URL}/todos`,{
       title:task,
-      userId:1,
       completed:false,
       rate
     }).then((data)=>{

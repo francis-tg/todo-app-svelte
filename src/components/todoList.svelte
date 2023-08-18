@@ -24,7 +24,7 @@
 	});
 	function setComplete(todo:TodoInterface) {
         todo.completed = !todo.completed;
-		fetchApi('PUT', `${API_URL}/todos/${todo.id}`, { ...todo})
+		fetchApi('PUT', `${API_URL}/todos/${todo._id}`, { ...todo})
 			.then((getdata) => {
 				//Todos.set(getdata)
 			})
@@ -32,7 +32,7 @@
 				console.error('Erreur lors de la requête:', error);
 			});
 	}
-    function removeTodo(id:number){
+    function removeTodo(id:string){
         fetchApi('DELETE', `${API_URL}/todos/${id}`, {})
 			.then((getdata) => {
 				//Todos.set(getdata)
@@ -44,13 +44,13 @@
 </script>
 
 <div class="container">
-	{#each datas as todo (todo.id)}
+	{#each datas as todo (todo._id)}
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<div
 			class={'todo ' + (todo.completed ? 'complete' : '')}
 			on:dblclick={() => setComplete(todo)}
 		>
-        <button class="remove-btn" on:click={()=>removeTodo(todo.id)}>
+        <button class="remove-btn" on:click={()=>removeTodo(todo._id)}>
             &times;
         </button>
 			<h4 class="title">{todo.title}</h4>

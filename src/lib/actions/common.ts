@@ -1,4 +1,4 @@
-export const API_URL = "http://localhost:3000"//`${window.location.protocol}//${window.location.hostname}:3000`;
+export const API_URL = "https://todo-api-l0b4.onrender.com/api"//`${window.location.protocol}//${window.location.hostname}:3000`;
 type params = {
     method: string,
     url: string,
