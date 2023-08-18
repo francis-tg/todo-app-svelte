@@ -33,6 +33,7 @@
       rate
     }).then((data)=>{
 		task = ''
+		rate = 0
       /* Todos.update((prevData)=>(
 		{
 			
