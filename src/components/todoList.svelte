@@ -8,7 +8,7 @@
 		const autoUpdata = setInterval(() => {
 			fetchApi('GET', `${API_URL}/todos/`, null)
 				.then((getdata) => {
-					Todos.set(getdata);
+					Todos.set(getdata.reverse());
 				})
 				.catch((error) => {
 					console.error('Erreur lors de la requête:', error);
@@ -63,6 +63,7 @@
 
 <style lang="scss">
 	.container {
+        width: 100%;
 		.todo {
             position: relative;
 			background: tomato;

@@ -8,7 +8,7 @@
 	</main>
 
 	<footer>
-		<p><a href="#/">Ciscodev</a></p>
+		<p><a href="https://github.com/francis-tg">Ciscodev</a></p>
 	</footer>
 </div>
 

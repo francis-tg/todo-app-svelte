@@ -33,7 +33,7 @@
       completed:false,
       rate
     }).then((data)=>{
-		
+		task = ''
       /* Todos.update((prevData)=>(
 		{
 			
@@ -92,7 +92,7 @@
 			gap: 10px;
 			width: 100%;
 			input {
-				width: 550px;
+				width: 100%;
 				height: 40px;
 				border: 1px solid #ff3e00;
 				border-radius: 0 8px 8px 0;
@@ -106,6 +106,7 @@
 				display: flex;
 				justify-content: flex-start;
 				align-items: center;
+				width: 100%;
 			}
 			.rate {
 				background-color: #ff3e00;
@@ -148,6 +149,16 @@
 					box-shadow: 0 0 1rem 0 #ff400091;
 					transition: box-shadow 0.5s ease-in-out;
 					cursor: pointer;
+				}
+			}
+		}
+	}
+	@media screen and (max-width:780px){
+		header{
+			.form-field{
+				width: 100%;
+				input{
+					width: 100%;
 				}
 			}
 		}
