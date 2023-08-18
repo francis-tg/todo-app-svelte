@@ -52,7 +52,7 @@
 
 <div class="container">
 	<header>
-		<h2>Todo APP</h2>
+		<h2>GESTIONNAIRE DE TÂCHE</h2>
 		<div class="form-field">
 			<div class="input-group">
 				<div class="rate">
