@@ -32,6 +32,15 @@
 				console.error('Erreur lors de la requête:', error);
 			});
 	}
+    function removeTodo(id:number){
+        fetchApi('DELETE', `${API_URL}/todos/${id}`, {})
+			.then((getdata) => {
+				//Todos.set(getdata)
+			})
+			.catch((error) => {
+				console.error('Erreur lors de la requête:', error);
+			});
+    }
 </script>
 
 <div class="container">
@@ -41,6 +50,9 @@
 			class={'todo ' + (todo.completed ? 'complete' : '')}
 			on:dblclick={() => setComplete(todo)}
 		>
+        <button class="remove-btn" on:click={()=>removeTodo(todo.id)}>
+            &times;
+        </button>
 			<h4 class="title">{todo.title}</h4>
 			<div class="rate">
 				{todo.rate ?? 0}
@@ -52,8 +64,9 @@
 <style lang="scss">
 	.container {
 		.todo {
+            position: relative;
 			background: tomato;
-			padding: 8px;
+			padding: 8px 15px;
 			margin-bottom: 10px;
 			border-radius: 10px;
 			display: flex;
@@ -64,6 +77,17 @@
                 opacity: .5;
 				border-left: 5px solid #0059ff;
 			}
+            .remove-btn{
+                position: absolute;
+                top: -8px;
+                right: -5px;
+                border: none;
+                background-color: tomato;
+                color: white;
+                border-radius: 50%;
+                font-size:25px;
+                cursor: pointer;
+            }
 			.rate {
 				background-color: white;
 				padding: 10px;
